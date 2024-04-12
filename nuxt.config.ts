@@ -14,7 +14,7 @@ export default defineNuxtConfig({
 		/**
 		 * Prefix for all the imported component
 		 */
-		prefix: "",
+		prefix: "Ui",
 		/**
 		 * Directory that the component lives in.
 		 * @default "./components/ui"
@@ -22,5 +22,21 @@ export default defineNuxtConfig({
 		componentDir: "./components/ui",
 	},
 
-	modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "shadcn-nuxt"],
+	modules: [
+		"@nuxt/image",
+		"@nuxtjs/tailwindcss",
+		"shadcn-nuxt",
+		"nuxt-icon",
+		[
+			"@nuxtjs/google-fonts",
+			{
+				families: {
+					Lato: {
+						wght: [100, 400, 700],
+						ital: [300],
+					},
+				},
+			},
+		],
+	],
 });

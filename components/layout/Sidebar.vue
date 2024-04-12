@@ -1,9 +1,20 @@
 <template>
 	<aside class="px-5 py-8 bg-sidebar h-full relative">
-		<!-- add shadecn -->
-		<NuxtLink to="/" class="mb-10 block">
-			<NuxtImg src="/logo.svg" class="w-[100px] mx-auto" />
+		<NuxtLink
+			to="/"
+			class="mb-10 block">
+			<NuxtImg
+				src="/logo.svg"
+				class="w-[140px] mx-auto" />
 		</NuxtLink>
+
+		<button class="absolute top-2 right-2 transition-colors hover:text-primary">
+			<Icon
+				name="line-md:log-out"
+				size="20" />
+		</button>
+
+		<LayoutMenu />
 	</aside>
 </template>
 
