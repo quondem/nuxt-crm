@@ -21,12 +21,16 @@ export default defineNuxtConfig({
 		 */
 		componentDir: "./components/ui",
 	},
+	pinia: {
+		storesDirs: ["./store/**"],
+	},
 
 	modules: [
 		"@nuxt/image",
 		"@nuxtjs/tailwindcss",
 		"shadcn-nuxt",
 		"nuxt-icon",
+		"@pinia/nuxt",
 		[
 			"@nuxtjs/google-fonts",
 			{
