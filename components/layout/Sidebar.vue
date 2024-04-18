@@ -8,7 +8,9 @@
 				class="w-[140px] mx-auto" />
 		</NuxtLink>
 
-		<button class="absolute top-2 right-2 transition-colors hover:text-primary">
+		<button
+			@click="logout"
+			class="absolute top-2 right-2 transition-colors hover:text-primary">
 			<Icon
 				name="line-md:log-out"
 				size="20" />
@@ -18,4 +20,10 @@
 	</aside>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const isLoadingStore = useIsLoadingStore();
+const store = useAuthStore();
+const router = useRouter();
+
+const logout = async () => {};
+</script>
