@@ -21,9 +21,15 @@
 </template>
 
 <script setup lang="ts">
-const isLoadingStore = useIsLoadingStore();
-const store = useAuthStore();
-const router = useRouter();
+	const isLoadingStore = useIsLoadingStore();
+	const store = useAuthStore();
+	const router = useRouter();
 
-const logout = async () => {};
+	const logout = async () => {
+		isLoadingStore.set(true);
+		await account.deleteSession("current");
+		store.clear();
+		await router.push("/login");
+		isLoadingStore.set(false);
+	};
 </script>
