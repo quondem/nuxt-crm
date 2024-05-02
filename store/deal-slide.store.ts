@@ -5,7 +5,7 @@ const defaultvalue: { card: ICard | null; isOpen: boolean } = {
 	isOpen: false,
 };
 
-export const useAuthStore = defineStore("auth", {
+export const useSlideOver = defineStore("auth", {
 	state: () => defaultvalue,
 	getters: {
 		isOpen: state => state.isOpen,
