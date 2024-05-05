@@ -26,7 +26,9 @@
 						@dragstart="() => handleDragStart(card, column)"
 						class="mb-5"
 						draggable="true">
-						<UiCardHeader role="button">
+						<UiCardHeader
+							role="button"
+							@click="store.set(card)">
 							<UiCardTitle> {{ card.name }}</UiCardTitle>
 							<UiCardDescription class="mt-2 block">{{ convertCurrency(card.price) }}</UiCardDescription>
 						</UiCardHeader>
@@ -39,6 +41,7 @@
 					</UiCard>
 				</div>
 			</div>
+			<KanbanSlideover />
 		</div>
 	</div>
 </template>
@@ -58,6 +61,7 @@
 
 	const dragCardRef = ref<ICard | null>(null);
 	const sourceColumnRef = ref<IColumn | null>(null);
+	const store = useDealSlideStore();
 
 	const { data, isLoading, refetch } = useKanbanQuery();
 

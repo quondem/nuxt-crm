@@ -1,18 +1,15 @@
 import type { ICard } from "~/components/kanban/kanban.types";
 
-const defaultvalue: { card: ICard | null; isOpen: boolean } = {
+const defaultValue: { card: ICard | null; isOpen: boolean } = {
 	card: null,
 	isOpen: false,
 };
 
-export const useSlideOver = defineStore("auth", {
-	state: () => defaultvalue,
-	getters: {
-		isOpen: state => state.isOpen,
-	},
+export const useDealSlideStore = defineStore("slide", {
+	state: () => defaultValue,
 	actions: {
 		clear() {
-			this.$patch({ isOpen: false });
+			this.$patch(defaultValue);
 		},
 
 		set(card: ICard) {
