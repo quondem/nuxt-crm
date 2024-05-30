@@ -4,31 +4,37 @@
 		<div v-if="isLoading">Loading...</div>
 		<div v-else>
 			<div class="grid grid-cols-5 gap-16">
+				{{ (data, "123") }}
 				<div
 					v-for="(column, index) in data"
 					:key="column.id"
 					@dragover="handleDragOver"
 					@drop="() => handleDrop(column)"
-					class="min-h-screen">
+					class="min-h-screen"
+				>
 					<div
 						class="rounded bg-slate-700 py-1 px-5 mb-2 text-center"
-						:style="generateColumnStyle(index, data?.length)">
+						:style="generateColumnStyle(index, data?.length)"
+					>
 						{{ column.name }}
 					</div>
 
 					<KanbanCreateDeal
 						:status="column.id"
-						:refetch="refetch" />
+						:refetch="refetch"
+					/>
 
 					<UiCard
 						v-for="card in column.items"
 						:key="card.id"
 						@dragstart="() => handleDragStart(card, column)"
 						class="mb-5"
-						draggable="true">
+						draggable="true"
+					>
 						<UiCardHeader
 							role="button"
-							@click="store.set(card)">
+							@click="store.set(card)"
+						>
 							<UiCardTitle> {{ card.name }}</UiCardTitle>
 							<UiCardDescription class="mt-2 block">{{ convertCurrency(card.price) }}</UiCardDescription>
 						</UiCardHeader>
