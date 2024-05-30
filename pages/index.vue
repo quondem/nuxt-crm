@@ -4,7 +4,6 @@
 		<div v-if="isLoading">Loading...</div>
 		<div v-else>
 			<div class="grid grid-cols-5 gap-16">
-				{{ (data, "123") }}
 				<div
 					v-for="(column, index) in data"
 					:key="column.id"
